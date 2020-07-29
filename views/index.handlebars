@@ -24,7 +24,7 @@
 
         {{#each restaurants}}
         <a href="/restaurants/{{ this.id }}" class="text-secondary">
-          <div class="card mb-3">
+          <div class="card mb-5">
             <img class="card-img-top" src={{ this.image }} alt={{ this.name }}>
             <div class="card-body p-3">
               <h6 class="card-title mb-1">{{ this.name }}</h6>
@@ -37,12 +37,19 @@
                 {{ this.rating }}
                 <i class="fas fa-star fa-xs"></i>
               </span>
+              <a class="badge badge-warning font-weight-normal" href="">Edit</a>
+              <a class="badge badge-warning font-weight-normal" href="">Detail</a>
+              <form action="" style="display: inline;">
+                <button type="submit" class="badge badge-dark">delete</button>
+              </form>
             </div>
           </div>
         </a>
-
         {{/each}}
+        <div class="card d-flex justify-content-center align-items-center mb-5" style="height: 180px">
+          <a class="text-secondary fas fa-plus fa-5x" style="text-decoration: none;"
+            href="/restaurants/{{ this.id }}/create"></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
