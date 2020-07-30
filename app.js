@@ -32,7 +32,7 @@ app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .lean()
-    .then((restaurant) => res.render('show', { restaurant }))
+    .then(restaurant => res.render('show', { restaurant }))
     .catch(error => console.log(error))
 })
 

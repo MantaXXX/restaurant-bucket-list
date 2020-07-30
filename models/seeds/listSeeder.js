@@ -13,7 +13,6 @@ db.once('open', () => {
   console.log('mongodb connected!')
   restaurantData.forEach(data => {
     Restaurant.create({
-      id: `${data.id}`,
       name: `${data.name}`,
       name_en: `${data.name_en}`,
       category: `${data.category}`,
