@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const restaurantData = require('../../restaurant.json').results
-const List = require('../list')
+const Restaurant = require('../restaurant')
 
 mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
@@ -12,7 +12,7 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongodb connected!')
   restaurantData.forEach(data => {
-    List.create({
+    Restaurant.create({
       id: `${data.id}`,
       name: `${data.name}`,
       name_en: `${data.name_en}`,
