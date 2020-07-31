@@ -90,6 +90,33 @@ app.post('/restaurants/:id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// New
+app.get('/restaurant/new', (req, res) => {
+  return res.render('new')
+})
+
+app.post('/restaurants', (req, res) => {
+  const name = req.body.name
+  const category = req.body.category
+  const location = req.body.location
+  const google_map = req.body.google_map
+  const phone = req.body.phone
+  const rating = req.body.rating
+  const description = req.body.description
+  const image = req.body.image
+  return Restaurant.create({
+    name,
+    category,
+    location,
+    google_map,
+    phone,
+    rating,
+    description,
+    image
+  })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
 
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
