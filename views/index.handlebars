@@ -28,20 +28,21 @@
             <img class="card-img-top" src={{ this.image }} alt={{ this.name }}>
             <div class="card-body p-3">
               <h6 class="card-title mb-1">{{ this.name }}</h6>
-
               <div class="restaurant-category mb-1">
                 <i class="fas fa-utensils pr-2"></i> {{ this.category }}
               </div>
-
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{ this.rating }}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-              <a class="badge badge-warning font-weight-normal" href="">Edit</a>
-              <a class="badge badge-warning font-weight-normal" href="">Detail</a>
-              <form action="" style="display: inline;">
-                <button type="submit" class="badge badge-dark">delete</button>
-              </form>
+              <div class="d-flex justify-content-between">
+                <span class="badge badge-pill badge-danger font-weight-normal">
+                  {{ this.rating }}
+                  <i class="fas fa-star fa-xs"></i>
+                </span>
+                <div>
+                  <a class="btn btn-warning btn-sm font-weight-normal" href="/restaurants/{{ this._id }}/edit">Edit</a>
+                  <form action="" style="display: inline;">
+                    <button type="submit" class="btn btn-outline-dark btn-sm font-weight-normal">delete</button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </a>
