@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 
 const mongoose = require('mongoose')
 const { urlencoded } = require('body-parser')
+const restaurant = require('./models/restaurant')
 mongoose.connect('mongodb://localhost/restaurant_list', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 
@@ -77,6 +78,15 @@ app.post('/restaurants/:id/edit', (req, res) => {
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
+    .catch(error => console.log(error))
+})
+
+// delete
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then(restaurant => restaurant.remove())
+    .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 

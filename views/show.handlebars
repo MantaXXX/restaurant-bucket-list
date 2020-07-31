@@ -3,7 +3,10 @@
   <a href="/restaurants/{{ restaurant._id }}/edit"><button type="button"
       class="btn btn-warning btn-sm font-weight-normal">Edit</button></a>
   <a href="/"><button class="mx-1 btn btn-warning btn-sm font-weight-normal">Back</button></a>
-  <button type="submit" class="mr-5 btn btn-outline-dark btn-sm font-weight-normal">delete</button>
+  <form action="/restaurants/{{ restaurant._id }}/delete" method="POST">
+    <button type="submit" class="mr-5 btn btn-outline-dark btn-sm font-weight-normal">Delete</button>
+  </form>
+
 </div>
 
 <div class="container">
