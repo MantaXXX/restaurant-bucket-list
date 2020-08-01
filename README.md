@@ -5,9 +5,15 @@ A restaurant webpage made from Node.js, Handlebars, Express displays different r
 
 ## Use
 
-* Click the target and you can get the phone, location and description of this restaurant.
+* Click image or restaurant name and you could be directed to restaurant detail page where you can see more info of this restaurant.
 
-* Click the location icon to show the google Map of this restaurant.
+* Click the "+" at the end of list and you can create new restaurant.
+
+* Click the "Delete" button to delete the restaurant.
+
+* Click the "Edit" button and you can edit your restaurant info.
+
+* Click the "Back" button and you will be redirected to homepage.
 
 * Click '我的餐廳清單' to back to homepage.
 
